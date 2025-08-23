@@ -235,6 +235,49 @@
             transform: translateX(0);
         }
 
+        /* 金句参考样式 */
+        .quote-reference {
+            margin-top: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .toggle-quote-btn {
+            width: 100%;
+            padding: 12px;
+            background: #f1f5f9;
+            border: none;
+            text-align: left;
+            font-weight: 600;
+            color: #4a5568;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-quote-btn:hover {
+            background: #e2e8f0;
+        }
+
+        .quote-content {
+            padding: 15px;
+            background: #f8fafc;
+        }
+
+        .quote-content ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .quote-content li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .quote-content strong {
+            color: #2d3748;
+        }
+
         @media (max-width: 768px) {
             .container {
                 margin: 10px;
@@ -294,18 +337,132 @@
                 <div class="form-group">
                     <label for="a2">【A2】</label>
                     <div class="dual-input">
-                        <select id="a2-select">
-                            <option value="">选择金句</option>
-                            <option value="变化就是永恒！">变化就是永恒！</option>
-                            <option value="成为一个永恒不息地进步的CANi 人！">成为一个永恒不息地进步的CANi 人！</option>
-                            <option value="心中如能保留，双手定能拥有！">心中如能保留，双手定能拥有！</option>
-                            <option value="我是一个当下主义者！">我是一个当下主义者！</option>
-                            <option value="现在就去做">现在就去做</option>
-                            <option value="对于我为这一天所付出的代价，
-我希望我会无怨无悔！">对于我为这一天所付出的代价，
-我希望我会无怨无悔！</option>
-                        </select>
+                        <input type="text" id="a2-select" placeholder="输入金句">
                         <textarea id="a2-input" placeholder="感受感悟及应用"></textarea>
+                    </div>
+                    <!-- 金句参考折叠区域 -->
+                    <div class="quote-reference">
+                        <button type="button" class="toggle-quote-btn" onclick="toggleQuoteReference()">﹀ 查看金句参考</button>
+                        <div id="quoteReference" class="quote-content" style="display: none;">
+                            <h4>金句参考</h4>
+                            <ol>
+                                <li>
+                                    <strong>改变的智慧</strong><br>
+                                    变化就是永恒！<br>
+                                    万物改变，从我做起！<br>
+                                    我会勇敢地改变我受控圈内的环境，<br>
+                                    我能安然地接纳我受控圈外的环境，<br>
+                                    我有足够的智慧去分辨两者的差异！
+                                </li>
+                                <li>
+                                    <strong>CANi 人</strong><br>
+                                    我要刻意的空间重复，<br>
+                                    并且每次进步一点点，<br>
+                                    以成为一个永恒不息地进步的CANi 人！
+                                </li>
+                                <li>
+                                    <strong>「心」的律法</strong><br>
+                                    只要爱意在心间，<br>
+                                    没有事情是太烦，<br>
+                                    总有足够的时间。<br>
+                                    心神工作，先于辛勤工作！<br>
+                                    心中如能保留，双手定能拥有！<br>
+                                    携手同心，其利断金！<br>
+                                    为达成我们的梦想，<br>
+                                    我们必须同心向前，创造：<br>
+                                    共同的愿景，<br>
+                                    共同的价值观，<br>
+                                    和 共通的语言！
+                                </li>
+                                <li>
+                                    <strong>当下的力量</strong><br>
+                                    我所拥有唯一的力量，<br>
+                                    就是当下的力量。<br>
+                                    我必须活在当下，<br>
+                                    拥有当下的意识，<br>
+                                    并且成为一个「当下主义者」！<br>
+                                    我是一个当下主义者！
+                                </li>
+                                <li>
+                                    <strong>现在就去做</strong><br>
+                                    我经过这世界，<br>
+                                    仅此一趟。<br>
+                                    我所能做的任何美事，<br>
+                                    我能对任何人表达的善意，<br>
+                                    且让我现在就去做，<br>
+                                    切勿拖延，<br>
+                                    因为我将不会再次经过。
+                                </li>
+                                <li>
+                                    <strong>丰盛的一天</strong><br>
+                                    今天是新一天的开始，<br>
+                                    我可以随心所欲地运用这一天。<br>
+                                    我可以随随便便地把它浪费掉，<br>
+                                    或者好好地利用它去为人服务。<br>
+                                    但我最后如何利用这一天，<br>
+                                    实在是十分重要。<br>
+                                    因为这是我用一日的生命，<br>
+                                    来换取的一天。<br>
+                                    当明日降临，<br>
+                                    今天将永远成为过去。<br>
+                                    对于我为这一天所付出的代价，<br>
+                                    我希望我会无怨无悔！
+                                </li>
+                                <li>
+                                    <strong>爱自己的选择</strong><br>
+                                    人类 最珍贵的自由，就是选择的自由！ 我选择什么，就会成为什么！<br>
+                                    我选择 创造和享受 平和、喜乐、富足 和 丰盛 的一生！<br>
+                                    我选择做自己内心的主人，妥善管理自己的感受、行为、行动和成果！<br>
+                                    我选择做一个常怀感恩，活在当下的 当下主义者！<br>
+                                    我选择做一个能量付出者（Energy Giver）！<br>
+                                    我选择做一个百分百 参与、投入与 承诺 的 P-I-C 人！<br>
+                                    我选择做一个合作、三赢 的领袖、追随者 和 家庭成员 及 团队伙伴！
+                                </li>
+                                <li>
+                                    <strong>改变双程路</strong><br>
+                                    改变思想，改变身体；<br>
+                                    改变身体，改变思想。<br>
+                                    Yahoo…Ten！
+                                </li>
+                                <li>
+                                    <strong>一响：</strong><br>
+                                    凭着爱心与信任，<br>
+                                    主动热情去接近<br>
+                                    能量付出一百分！
+                                </li>
+                                <li>
+                                    <strong>二响：</strong><br>
+                                    我安坐，然后放松…
+                                </li>
+                                <li>
+                                    <strong>三响：</strong><br>
+                                    我由消极，「转」为积极！
+                                </li>
+                                <li>
+                                    <strong>皇牌（ACE）</strong><br>
+                                    我，决定，潜入海中；<br>
+                                    计划，采取行动；<br>
+                                    检视，四周环境；<br>
+                                    学习，海底发功！
+                                </li>
+                                <li>
+                                    <strong>我们如何达成？</strong><br>
+                                    一、二、三、四，成果！【x3次】
+                                </li>
+                                <li>
+                                    <strong>常怀感恩</strong><br>
+                                    停止埋怨，停止比较；<br>
+                                    心存感恩，数算我的恩典！
+                                </li>
+                                <li>
+                                    <strong>谷中回音</strong><br>
+                                    生命有如谷中回音，<br>
+                                    我怎样呼喊，它就怎样回应；<br>
+                                    生命又像回力镖；<br>
+                                    我怎样抛出，它就怎样飞回。
+                                </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -331,7 +488,8 @@
                     <label for="b2">【B2】</label>
                     <div class="dual-input">
                         <select id="b2-select">
-                           <option value="家庭生活">家庭生活</option>
+                            <option value="">选择类型</option>
+                            <option value="家庭生活">家庭生活</option>
                             <option value="社群奉献">社群奉献</option>
                             <option value="财务管理">财务管理</option>
                             <option value="事业学业">事业学业</option>
@@ -377,7 +535,7 @@
     <script>
         // 初始化日期和天数
         function initializeDate() {
-            const startDate = new Date('2025-08-18');
+            const startDate = new Date('2025-08-19');
             const currentDate = new Date();
             
             // 格式化当前日期
@@ -479,7 +637,7 @@
 
         // 重置表单
         function resetForm() {
-            const inputs = document.querySelectorAll('input[type="text"]:not(.auto-info), textarea, select');
+            const inputs = document.querySelectorAll('input[type="text"]:not(.auto-info), textarea');
             inputs.forEach(input => input.value = '');
             document.getElementById('result').style.display = 'none';
         }
@@ -488,6 +646,20 @@
         window.onload = function() {
             initializeDate();
         };
+
+        // 控制金句参考的展开和收起
+        function toggleQuoteReference() {
+            const quoteReference = document.getElementById('quoteReference');
+            const toggleBtn = document.querySelector('.toggle-quote-btn');
+            
+            if (quoteReference.style.display === 'none') {
+            quoteReference.style.display = 'block';
+            toggleBtn.textContent = '︿ 收起金句参考';
+            } else {
+            quoteReference.style.display = 'none';
+            toggleBtn.textContent = '﹀ 查看金句参考';
+            }
+        }
     </script>
 </body>
 </html>
