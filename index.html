@@ -573,36 +573,36 @@
             }
 
             let result = `${nickname}\n`;
-            result += `日期｜${date} ｜ ${dayCount}\n`;
+            result += `日期｜${date} \n ${dayCount}\n`;
             
-            if (a1) result += `【A1】\n${a1}\n`;
+            if (a1) result += `【A1】${a1}\n`;
             
             if (a2Select || a2Input) {
-                result += `【A2】\n`;
+                result += `【A2】`;
                 if (a2Select) result += `${a2Select}`;
-                if (a2Select && a2Input) result += ` ｜ `;
+                if (a2Select && a2Input) result += ` \n `;
                 if (a2Input) result += `${a2Input}`;
                 result += '\n';
             }
             
             if (b1Select || b1Input) {
-                result += `【B1】\n`;
+                result += `【B1】`;
                 if (b1Select) result += `${b1Select}`;
-                if (b1Select && b1Input) result += ` ｜ `;
+                if (b1Select && b1Input) result += ` \n `;
                 if (b1Input) result += `${b1Input}`;
                 result += '\n';
             }
             
             if (b2Select || b2Input) {
-                result += `【B2】\n`;
+                result += `【B2】`;
                 if (b2Select) result += `${b2Select}`;
-                if (b2Select && b2Input) result += ` ｜ `;
+                if (b2Select && b2Input) result += ` \n `;
                 if (b2Input) result += `${b2Input}`;
                 result += '\n';
             }
             
-            if (c1) result += `【C1】\n${c1}\n`;
-            if (c2) result += `【C2】\n${c2}`;
+            if (c1) result += `【C1】${c1}\n`;
+            if (c2) result += `【C2】${c2}\n`;
 
             document.getElementById('resultText').textContent = result.trim();
             document.getElementById('result').style.display = 'block';
