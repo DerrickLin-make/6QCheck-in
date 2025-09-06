@@ -660,6 +660,41 @@
             toggleBtn.textContent = '﹀ 查看金句参考';
             }
         }
+        
     </script>
+    
+    <!-- Coze 聊天机器人 -->
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.10/libs/cn/index.js"></script>
+    <script>
+        // 初始化 Coze 聊天机器人
+        new CozeWebSDK.WebChatClient({
+            config: {
+                bot_id: '7546245182686249012',
+            },
+            componentProps: {
+                title: 'Coze AI助手',
+                layout: 'pc',
+                width: 380,
+                height: 600,
+                position: {
+                    bottom: 20,
+                    right: 20
+                },
+                showCloseBtn: true,
+                showMinimizeBtn: true,
+                showMaximizeBtn: false,
+                showIcon: true,
+                iconUrl: 'https://lf-cdn.coze.cn/obj/coze-cn-platform-bots/7546245182686249012/icon.png'
+            },
+            auth: {
+                type: 'token',
+                token: 'pat_v0fPknxTKErjVjWP6u7qKiejJIKQrlIdHIUXOPuZLUGZ86x6XYTAicwTHE83IYyG',
+                onRefreshToken: function() {
+                    return 'pat_v0fPknxTKErjVjWP6u7qKiejJIKQrlIdHIUXOPuZLUGZ86x6XYTAicwTHE83IYyG';
+                }
+            }
+        });
+    </script>
+    
 </body>
 </html>
